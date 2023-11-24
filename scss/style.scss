@@ -1,0 +1,170 @@
+@use "navbar";
+@use "utils";
+@use "variables";
+@use "breakpoints" as *;
+
+
+// resets
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: var(--dark-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--green);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 10rem;
+  font-size: 10px;
+}
+
+
+main {
+    background-image: url(/dist/pics/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    
+    padding: 20px;
+
+    h1 {
+      text-transform: uppercase;
+      place-self: center;
+      font-size: 3rem;
+    }
+
+  p {
+    place-self: center;
+    text-transform: capitalize;
+    font-size: 1.6rem;
+   }
+}
+
+main h1, main p {
+    color: #fff;
+}
+
+
+
+
+
+#artist .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @include breakpoint(laptop) {
+      grid-template-columns: 1fr;
+    }
+    
+}
+
+.artist-img {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.artist-img img  {
+    width: 192px;
+    height: 244px;
+    margin: 10px;
+    border-radius: 50%;
+   
+}
+
+.artist-img p {
+    padding: 5px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: capitalize;
+}
+
+.artist-text {
+    margin: 5px;
+    text-align: center;
+    padding: 1rem;
+
+    p {
+      font-size: 1.6rem;
+      text-align: center;
+    }
+}
+
+#artist-one {
+  background-color: #ffffb3;
+}
+
+#artist-two {
+  background-color: #ffffe6;
+}
+
+#artist-three {
+  background-color: #e6e6ff;
+}
+.artist-work {
+
+  .artwork-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &:nth-child(2) {
+     .artwork-img {
+      order: 2;
+     }
+    }
+  
+  .artwork-img {
+    width: 40rem;
+    height: 30rem;
+
+   
+  
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .artwork-text {
+    width: 50%;
+    place-self: center;
+
+    h3 {
+      font-weight: 900;
+      font-size: 1.6rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+      
+    }
+  }
+  
+  }
+}
+
+
+
+
+
